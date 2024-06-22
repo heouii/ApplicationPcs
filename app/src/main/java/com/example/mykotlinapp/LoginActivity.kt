@@ -3,7 +3,7 @@ package com.example.mykotlinapp
 import ApiClient
 import ApiService
 import LoginRequest
-import User
+import LoginResponse
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -15,7 +15,7 @@ import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var usernameEditText: EditText
+    private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var loginButton: Button
 
@@ -23,33 +23,32 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        usernameEditText = findViewById(R.id.MailEditText)
+        emailEditText = findViewById(R.id.emailEditText)
         passwordEditText = findViewById(R.id.passwordEditText)
         loginButton = findViewById(R.id.loginButton)
 
         loginButton.setOnClickListener {
-            val username = usernameEditText.text.toString()
+            val email = emailEditText.text.toString()
             val password = passwordEditText.text.toString()
-            login(username, password)
+            login(email, password)
         }
     }
 
-    private fun login(username: String, password: String) {
+    private fun login(email: String, password: String) {
         val apiService = ApiClient.retrofit.create(ApiService::class.java)
-        val call = apiService.login(LoginRequest(username, password))
+        val call = apiService.login(LoginRequest(email, password))
 
-        call.enqueue(object : Callback<User> {
-            override fun onResponse(call: Call<User>, response: Response<User>) {
+        call.enqueue(object : Callback<LoginResponse> {
+            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 if (response.isSuccessful) {
-                    val user = response.body()
-                    Toast.makeText(this@LoginActivity, "Login Successful: ${user?.name}", Toast.LENGTH_LONG).show()
-
+                    val loginResponse = response.body()
+                    Toast.makeText(this@LoginActivity, "Login Successful: ${loginResponse?.user?.name}", Toast.LENGTH_LONG).show()
                 } else {
                     Toast.makeText(this@LoginActivity, "Login Failed: ${response.message()}", Toast.LENGTH_LONG).show()
                 }
             }
 
-            override fun onFailure(call: Call<User>, t: Throwable) {
+            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                 Toast.makeText(this@LoginActivity, "API Error: ${t.message}", Toast.LENGTH_LONG).show()
             }
         })
