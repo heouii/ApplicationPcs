@@ -9,4 +9,6 @@
     <string name="description">Description</string>
     <string name="mes_reservation">Mes Reservation</string>
     <string name="mes_r_servations">Mes Réservations</string>
+    <string name="recherche" />
+    <string name="messages" />
 </resources>
