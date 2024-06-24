@@ -3,4 +3,10 @@
     <string name="password">Password</string>
     <string name="mail">Mail</string>
     <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="welcome_to_the_home_page">Welcome to the Home Page!</string>
+    <string name="date">Date</string>
+    <string name="description">Description</string>
+    <string name="mes_reservation">Mes Reservation</string>
+    <string name="mes_r_servations">Mes Réservations</string>
 </resources>
