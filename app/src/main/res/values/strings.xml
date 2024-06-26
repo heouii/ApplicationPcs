@@ -11,4 +11,14 @@
     <string name="mes_r_servations">Mes Réservations</string>
     <string name="recherche" />
     <string name="messages" />
+    <string name="reservation_name">Reservation Name</string>
+    <string name="reservation_details">Reservation Details</string>
+    <string name="conditions_de_l_tablissement">Conditions de l\'établissement</string>
+    <string name="obtenir_l_itin_raire">Obtenir l\'itinéraire</string>
+    <string name="title_search">Search</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="title_reservations">Reservations</string>
+    <string name="title_messages">Messages</string>
+    <string name="title_profile">Profile</string>
+    <string name="first_name">First-name</string>
 </resources>

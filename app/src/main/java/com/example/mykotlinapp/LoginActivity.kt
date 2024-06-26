@@ -47,10 +47,18 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(this@LoginActivity, "Login Successful: ${loginResponse?.user?.name}", Toast.LENGTH_LONG).show()
                     val token = loginResponse?.access_token
 
-
                     val sharedPreferences = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
                     val editor = sharedPreferences.edit()
                     editor.putString("TOKEN", token)
+
+                    loginResponse?.user?.let { user ->
+                        editor.putString("USER_NAME", user.name)
+                        editor.putString("USER_EMAIL", user.email)
+                        editor.putString("USER_FIRST_NAME", user.first_name)
+
+                        editor.putString("USER_CREATED_AT", user.created_at)
+
+                    }
                     editor.apply()
 
                     val intent = Intent(this@LoginActivity, HomeActivity::class.java)

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/reservationTitleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Hotel Name"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/textColor"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/datesTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="ven. 26 juil. 2024 - sam. 3 août 2024"
+        app:layout_constraintTop_toBottomOf="@id/reservationTitleTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/arrivalTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Arrivée : 14:00 - 00:00"
+        app:layout_constraintTop_toBottomOf="@id/datesTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/departureTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Départ : jusqu'à 11:00"
+        app:layout_constraintTop_toBottomOf="@id/arrivalTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/editDatesTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Modifier les dates"
+        android:textColor="@color/primaryColor"
+        app:layout_constraintTop_toBottomOf="@id/departureTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/instructionsTitleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Instructions pour l'enregistrement"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/editDatesTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/instructionsTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Votre hôte a fourni des informations sur la façon d'accéder à l'hébergement."
+        app:layout_constraintTop_toBottomOf="@id/instructionsTitleTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/viewDetailsTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Voir les détails"
+        android:textColor="@color/primaryColor"
+        app:layout_constraintTop_toBottomOf="@id/instructionsTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/addressTitleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Adresse de l'établissement"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/viewDetailsTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/addressTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Bunkyo-ku Yushima 3-39-2 UKA Building 2F/3F, Tokyo, 113-0034"
+        app:layout_constraintTop_toBottomOf="@id/addressTitleTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/getDirectionsTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Obtenir l'itinéraire"
+        android:textColor="@color/primaryColor"
+        app:layout_constraintTop_toBottomOf="@id/addressTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

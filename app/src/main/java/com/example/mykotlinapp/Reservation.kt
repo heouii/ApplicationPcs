@@ -6,6 +6,7 @@ data class Reservation(
     val end_time: String,
     val nombre_de_personne: Int,
     val appartement_id: Int,
+    val address: String,
     val prix: Int
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
@@ -13,6 +14,7 @@ data class Reservation(
         parcel.readString() ?: "",
         parcel.readInt(),
         parcel.readInt(),
+        parcel.readString() ?: "",
         parcel.readInt()
     )
 
@@ -21,6 +23,7 @@ data class Reservation(
         parcel.writeString(end_time)
         parcel.writeInt(nombre_de_personne)
         parcel.writeInt(appartement_id)
+        parcel.writeString(address)
         parcel.writeInt(prix)
     }
 
