@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class HomeActivity : AppCompatActivity() {
+class  HomeActivity : AppCompatActivity() {
 
     private lateinit var bottomNavigationView: BottomNavigationView
 

@@ -1,0 +1,23 @@
+<resources>
+    <!-- Base application theme -->
+    <style name="Theme.MyKotlinApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary color -->
+
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary color -->
+        <item name="colorSecondary">@color/secondaryColor</item>
+        <item name="colorSecondaryVariant">@color/primaryLightColor</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Other colors -->
+        <item name="android:colorBackground">@color/backgroundColor</item>
+        <item name="android:textColor">@color/textColor</item>
+        <!-- Disable default ActionBar -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Widget.Actionbar.Title" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/primaryColor</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+</resources>

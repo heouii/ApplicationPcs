@@ -58,6 +58,9 @@ class ReservationActivity : AppCompatActivity() {
             }
         }
 
+
+        bottomNavigationView.selectedItemId = R.id.navigation_reservations
+
         loadReservations()
     }
 
@@ -76,6 +79,7 @@ class ReservationActivity : AppCompatActivity() {
                         intent.putExtra("reservation", reservation)
                         startActivity(intent)
                     }
+
                     reservationsRecyclerView.adapter = reservationsAdapter
                 } else {
                     Toast.makeText(this@ReservationActivity, "Failed to load reservations", Toast.LENGTH_SHORT).show()

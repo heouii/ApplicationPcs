@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-feature android:name="android.hardware.nfc" android:required="true" />
 
     <application
         android:usesCleartextTraffic="true"
@@ -24,12 +25,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".FavoritesActivity" />
-        <activity android:name=".MessagesActivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".ReservationActivity" />
-        <activity android:name=".ReservationDetailsActivity" />
-        <activity android:name=".SearchActivity" />
+        <activity android:name=".HomeActivity" android:exported="false" />
+        <activity android:name=".FavoritesActivity" android:exported="false" />
+        <activity android:name=".MessagesActivity" android:exported="false" />
+        <activity android:name=".ProfileActivity" android:exported="false" />
+        <activity android:name=".ReservationActivity" android:exported="false" />
+        <activity android:name=".ReservationDetailsActivity" android:exported="false" />
+        <activity android:name=".SearchActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>

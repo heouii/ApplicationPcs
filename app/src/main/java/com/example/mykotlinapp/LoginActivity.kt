@@ -2,8 +2,6 @@ package com.example.mykotlinapp
 
 import ApiClient
 import ApiService
-import LoginRequest
-import LoginResponse
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +9,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.mykotlinapp.model.LoginRequest
+import com.example.mykotlinapp.model.LoginResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -55,13 +55,14 @@ class LoginActivity : AppCompatActivity() {
                         editor.putString("USER_NAME", user.name)
                         editor.putString("USER_EMAIL", user.email)
                         editor.putString("USER_FIRST_NAME", user.first_name)
-
                         editor.putString("USER_CREATED_AT", user.created_at)
-
+                        editor.putString("USER_SUBSCRIPTION_NAME", user.subscriptionName)
+                        editor.putInt("USER_FREE_SERVICES_REMAINING", user.freeServicesRemaining ?: 0)
+                        editor.putString("USER_NEXT_FREE_SERVICE_TIME", user.nextFreeServiceTime)
                     }
                     editor.apply()
 
-                    val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+                    val intent = Intent(this@LoginActivity, ReservationActivity::class.java)
                     startActivity(intent)
                     finish()
                 } else {

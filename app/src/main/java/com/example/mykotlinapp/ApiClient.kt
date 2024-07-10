@@ -5,7 +5,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiClient {
-    private const val BASE_URL = "http://192.168.56.1:80/api/mobile/login/"
+    private const val BASE_URL = "https://www.paris-caretaker-services.store/api/mobile/login/"
 
 
     private val logging = HttpLoggingInterceptor().apply {

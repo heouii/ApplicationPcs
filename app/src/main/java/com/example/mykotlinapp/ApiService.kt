@@ -1,4 +1,6 @@
 
+import com.example.mykotlinapp.model.LoginRequest
+import com.example.mykotlinapp.model.LoginResponse
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
